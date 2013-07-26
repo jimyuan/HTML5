@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="canvas.less" rel="stylesheet/less" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <script src="components/less.js/dist/less-1.4.1.js"></script>
+  </head>
+  <body class="container">    
+    <header class="row">
+      <h1 class="span12">Canvas</h1>
+    </header>
+    <hr>
+    <div class="row">
+      <section class="span12">
+        <h3>Canvas 2D</h3>
+        <canvas id="canvas" width="940" height="300"></canvas>
+        <p>&nbsp;</p>
+        <code><i class="icon-eye-open"></i> view source</code>
+        <pre class="prettyprint linenums hide">
+&lt;canvas id="canvas" width="940" height="300"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+  var c = document.getElementById("canvas").getContext("2d");
+  c.fillStyle="blue";
+  c.fillRect(250, 25, 150, 150);
+
+  c.beginPath();
+  c.arc(280, 150, 100, Math.PI * 1/2, Math.PI * 3/2, true);
+  c.lineWidth = 15;
+  c.lineCap = 'round';
+  c.strokeStyle = 'rgba(255, 127, 0, 0.5)';
+  c.stroke();
+
+  c.beginPath();
+  c.bezierCurveTo(400, 20, 750, 280, 500, 200);
+  c.lineWidth=5;
+  c.strokeStyle="rgba(255,0,0, 0.8)";
+  c.stroke();
+&lt;/script&gt;
+</pre>
+      </section>
+    </div>
+<hr>
+    <div class="row">
+      <section class="span12">
+        <h3 id="show3D">Canvas 3D</h3>
+        <canvas id="c" width="940" height="500"></canvas>
+      </section>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="c3djs/matrix4x4.js"></script>
+    <script src="c3djs/context.js"></script> 
+    <script src="c3djs/demo.js"></script> 
+    <script src="c3djs/angeles.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        window.prettyPrint && prettyPrint();
+
+        $("i.icon-eye-open").parent().on("click",function(){
+          $(this).toggleClass("expend").next().slideToggle();
+        });
+
+        var c = document.getElementById("canvas").getContext("2d");
+        c.fillStyle="blue";
+        c.fillRect(250, 25, 150, 150);
+        
+        c.beginPath();
+        c.arc(280, 150, 100, Math.PI * 1/2, Math.PI * 3/2, true);
+        c.lineWidth = 15;
+        c.lineCap = 'round';
+        c.strokeStyle = 'rgba(255, 127, 0, 0.5)';
+        c.stroke();
+
+        c.beginPath();
+        c.bezierCurveTo(400, 20, 750, 280, 500, 200);
+        c.lineWidth=5;
+        c.strokeStyle="rgba(255,0,0, 0.8)";
+        c.stroke();
+
+        $("#show3D").on("click", main);
+      });
+    </script>
+  </body>
+</html>

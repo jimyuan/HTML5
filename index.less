@@ -11,14 +11,14 @@ section.span3{
 	font-size: 20px;
 	margin-bottom:@gridGutterWidth;
 	height:@gridColumnWidth*2;
-	line-height: @gridColumnWidth*2;
-	.transition(all .3s ease-in-out);
-	&:hover{
-		background: lighten(blue, 30%);
-	}
 	a{
 		color: black;
+		display: block;
+		height:@gridColumnWidth*2;
+		line-height: @gridColumnWidth*2;
+		.transition(all .3s ease-in-out);
 		&:hover{
+			background: lighten(blue, 30%);
 			text-decoration: none;
 			color:white;
 		}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="animate.less" rel="stylesheet/less" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <script src="components/less.js/dist/less-1.4.1.js"></script>
+
+  </head>
+  <body class="container">    
+    <header class="row">
+      <h1 class="span12">Animate</h1>
+    </header>
+    <hr>
+    <div class="row">
+      <section class="span12">
+        <div id="Animate-wrap">
+          <div id="cloud"><i class="icon-cloud"></i></div>
+          <div id="sun"><i class="icon-sun"></i></div>
+          <div id="circle"><i class="icon-circle"></i></div>
+        </div>
+        <p>&nbsp;</p>
+        <code><i class="icon-eye-open"></i> view source</code>
+        <pre class="prettyprint linenums hide">
+@keyframes "sunshine"{
+  0%{
+    color: #ff4d4d;
+  }
+  25%{
+    color: orange;
+  }
+  50%{
+    color: yellow;
+  }
+  75%{
+    color:orange;
+  }
+  100%{
+    color:#ff4d4d;
+    .rotate(360deg);
+  }
+}
+
+#sun{
+  animation:sunshine 5s linear 0s infinite;
+}
+</pre>
+      </section>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        window.prettyPrint && prettyPrint();
+
+        $("i.icon-eye-open").parent().on("click",function(){
+          $(this).toggleClass("expend").next().slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

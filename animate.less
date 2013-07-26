@@ -1,0 +1,81 @@
+@import "components/bootstrap/less/bootstrap.less";
+
+.animate(@animation){
+	-webkit-animation:@animation;
+		 -moz-animation:@animation;
+		  -ms-animation:@animation;
+		   -o-animation:@animation;
+		  		animation:@animation;
+}
+
+h1{ text-align: center;}
+
+code, pre{border-radius: 0;}
+code{ cursor:pointer;}
+code.expend{border-bottom-width: 0; color:gray;}
+pre{line-height: 2em}
+
+#Animate-wrap{
+	height:@gridRowWidth/2;
+	position:relative;
+	#gradient > .vertical-three-colors(lighten(skyblue, 5%), white, 60%, lighten(green, 55%));
+
+	#sun, #circle{
+		@r:120px;
+		position: absolute;
+		text-align: center;
+		top:50px; left:100px;
+		.square(@r);
+		font-size: @r;
+		line-height: @r;
+	}
+
+	#circle{
+		font-size:92px;
+		top:50px;left:100px;
+		color:red;
+	}
+
+	#sun{
+		.animate(sunshine 5s linear 0s infinite);
+	}
+
+	#cloud{
+		@r:180px;
+		position: absolute;
+		top:80px; left:120px;
+		.square(@r);
+		font-size:@r;
+		color:white;
+		.animate(cloud 2s linear 0s infinite alternate);
+		text-shadow:2px 4px 15px #DDD;
+	}
+}
+
+@-webkit-keyframes "sunshine"{
+	0%{
+		color: lighten(red, 20%);
+	}
+	25%{
+		color: orange;
+	}
+	50%{
+		color: yellow;
+	}
+	75%{
+		color:orange;
+	}
+	100%{
+		color: lighten(red, 15%);
+		.rotate(360deg);
+	}
+}
+
+@-webkit-keyframes "cloud"{
+	form{
+		.scale(0.9);
+	}
+	to{
+		.scale(1.2);
+	}
+}

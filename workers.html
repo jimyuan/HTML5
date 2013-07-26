@@ -4,35 +4,25 @@
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <title>Web Workers</title>
-  <style>
-    #wrap{
-      width:600px;
-      margin:0 auto;
-      text-align: center;
-    }
-    #output{
-      text-align:left;
-    }
-    var{
-      color:red;
-    }
-    #withWorkers{
-      color:green;
-    }
-  </style>
+  <link href="workers.less" rel="stylesheet/less" media="screen">
+  <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+  <script src="components/less.js/dist/less-1.4.1.js"></script>
 </head>
-<body>
+<body class="container">
 
-  <div id="wrap">
-    <h1>算质数</h1>
-    <br>
-    <div>
-        <input id="max" type="text" />以内的质数
-        <input type="button" id="noWorkers" value="计算(without Workers)">
-        <input type="button" id="withWorkers" value="计算(with Workers)">
+  <div id="wrap" class="row">
+    <div class="span12">
+      <h1>算质数</h1>
+      <hr>
+      <div class="lead">
+        计算 <input id="max" type="text" placeholder="1000"> 以内的质数
+        <br>
+        <input type="button" id="noWorkers" value="计算(without Workers)" class="btn btn-large">
+        <input type="button" id="withWorkers" value="计算(with Workers)" class="btn btn-large">
+      </div>
+      <br>
+      <div id="output"></div>
     </div>
-    <br>
-    <div id="output"></div>
   </div>
   <script type="text/javascript" src="prime.js"></script>
   <script>
