@@ -1,0 +1,25 @@
+@import "components/bootstrap/less/bootstrap.less";
+
+h1{ text-align: center;}
+div.row{margin-bottom:40px;}
+div.alert{
+	.transition(all .3s ease-in-out);
+}
+
+#workLocation{
+	@w:940px;
+	@h:@w*2/3;
+	.size(@h, @w);
+	line-height: @h;
+	text-align: center;
+	font-size: 2em;
+	background: #EEE;
+	img{
+		max-width: none;
+	}
+}
+.BMap_bubble_title{font-weight: bold; color:#005F6B; font-size: 14px; line-height: 2em}
+.BMap_bubble_content{
+	font-size: 12px;
+	line-height: 1.3em;
+}

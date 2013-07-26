@@ -1,0 +1,84 @@
+@import "components/bootstrap/less/bootstrap.less";
+
+@s:red;
+@m:green;
+@e:blue;
+@g:lighten(gray, 15%);
+@l:lighten(@g, 30%);
+@d:darken(@g, 30%);
+ 
+h1{text-align: center;}
+header{
+	background:rgba(255,255,255,1); 
+	> div.span4{ height:100px; line-height:100px; text-align: center; text-shadow: 1px 1px white; font-size:45px;font-weight: bold; margin-bottom: @gridGutterWidth/2;}
+}
+.s{background:@s;}
+.m{background:@m;}
+.e{background:@e;}
+.l{background:@l;}
+.g{background:@g;}
+.d{background:@d;}
+
+article > h3{ 
+	margin-left: @gridGutterWidth;
+	cursor: pointer;
+	background: @l;
+	.transition(background-color .3s ease-in-out);
+	&:hover{
+		background: @g;
+	}
+}
+article > section{ 
+	.square(@gridColumnWidth*6);
+	border-bottom: @gridGutterWidth*2 solid white;
+	&.s1{
+		#gradient > .horizontal(@s, @e);
+	}
+	&.s8{
+		#gradient > .horizontal(@l, @d);
+	}
+	&.s2{
+		#gradient > .vertical(@s, @e);
+	}
+	&.s9{
+		#gradient > .vertical(@l, @d);
+	}
+	&.s3{
+		#gradient > .directional(@s, @e);
+	}
+	&.s10{
+		#gradient > .directional(@l, @d);
+	}
+	&.s4{
+		#gradient > .horizontal-three-colors(@s, @m, 50%, @e);
+	}
+	&.s11{
+		#gradient > .horizontal-three-colors(@l, @g, 50%, @d);
+	}
+	&.s5{
+		#gradient > .vertical-three-colors(@s, @m, 50%, @e);
+	}
+	&.s12{
+		#gradient > .vertical-three-colors(@l, @g, 50%, @d);
+	}
+	&.s6{
+		#gradient > .radial(@s, @e);
+	}
+	&.s13{
+		#gradient > .radial(@l, @d);
+	}
+	&.s7{
+		#gradient > .striped(@m, -45deg);
+		.size(@gridColumnWidth, 940px);
+	}
+	&.s14{
+		#gradient > .striped(@g, -45deg);
+		background-size: 40px 40px;
+		.size(@gridColumnWidth/2, 940px);
+	}
+}
+div.span12{ margin-bottom: @gridGutterWidth;}
+code, pre{border-radius: 0;}
+code{ cursor:pointer;}
+code.expend{border-bottom-width: 0; color:gray;}
+pre{line-height: 2em}

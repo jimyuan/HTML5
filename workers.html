@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>Web Workers</title>
+  <style>
+    #wrap{
+      width:600px;
+      margin:0 auto;
+      text-align: center;
+    }
+    #output{
+      text-align:left;
+    }
+    var{
+      color:red;
+    }
+    #withWorkers{
+      color:green;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="wrap">
+    <h1>算质数</h1>
+    <br>
+    <div>
+        <input id="max" type="text" />以内的质数
+        <input type="button" id="noWorkers" value="计算(without Workers)">
+        <input type="button" id="withWorkers" value="计算(with Workers)">
+    </div>
+    <br>
+    <div id="output"></div>
+  </div>
+  <script type="text/javascript" src="prime.js"></script>
+  <script>
+    var noWorkers=document.getElementById("noWorkers");
+    var withWorkers=document.getElementById("withWorkers");
+    var max_dom=document.getElementById("max");
+    var output_dom=document.getElementById("output");
+    noWorkers.onclick=function(){
+      var value=max_dom.value;
+      output_dom.innerHTML="<var>计算中...</var>";
+      if(value){
+        //获取质数数组
+        var startTime=(new Date()).getTime();
+        var arr=getPrime(parseInt(value));
+        var nowTime=(new Date()).getTime();
+        var time=(nowTime-startTime)/1000;
+        //
+        var str=arrToString(arr);
+        str="<strong>"+value+"</strong> 以内的质数有<strong> "+arr.length+" </strong>个：<var>（计算耗时"+time+"秒）</var><br>"+str;
+        //
+        output_dom.innerHTML=str;
+      
+      }else{
+        output_dom.innerHTML="<var>请输入素数的范围</var>";
+      }
+    }
+
+    withWorkers.onclick=function(){
+      if(typeof(Worker)!=="undefined"){
+        if(typeof(w)=="undefined"){
+          w=new Worker("workers.js");
+        }
+        output_dom.innerHTML="<var>计算中...</var>";
+        w.postMessage(max_dom.value);
+        w.onmessage=function(e){
+          output_dom.innerHTML=e.data;
+        }
+      }
+      else{
+        alert("Sorry! No Web Worker support")
+      }
+    }
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TRANSFORM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="transform.less" rel="stylesheet/less" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <script src="components/less.js/dist/less-1.4.1.js"></script>   
+  </head>
+  <body class="container">    
+    <header class="row">
+      <h1 class="span12">transform &amp; transition</h1>
+    </header>
+    <hr>
+    <div class="row">
+      <article class="span4">
+        <h3>translate 平移</h3>
+        <section class="transform"><i class="icon-html5"></i></section>
+      </article>
+      <article class="span8">
+        <h3><i class="icon-code"></i></h3>
+        <pre class="prettyprint linenums">
+article > section {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+article > section:active {
+  -webkit-transform: translate(60px, 0);
+  -moz-transform: translate(60px, 0);
+  -ms-transform: translate(60px, 0);
+  -o-transform: translate(60px, 0);
+  transform: translate(60px, 0);
+}
+</pre>        
+      </article>
+    </div>
+
+    <div class="row">
+      <article class="span4">
+        <h3>rotate 旋转</h3>
+        <section class="rotate"><i class="icon-html5"></i></section>
+      </article>
+      <article class="span8">
+        <h3><i class="icon-code"></i></h3>
+        <pre class="prettyprint linenums">
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+</pre>
+      </article>
+    </div>
+
+    <div class="row">
+      <article class="span4">
+        <h3>rotate 旋转 - 2</h3>
+        <section class="rotate2"><i class="icon-html5"></i></section>
+      </article>
+      <article class="span8">
+        <h3><i class="icon-code"></i></h3>
+        <pre class="prettyprint linenums">
+  -webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+</pre>
+      </article>
+    </div>
+
+    <div class="row">
+      <article class="span4">
+        <h3>scale 缩放</h3>
+        <section class="scale"><i class="icon-html5"></i></section>        
+      </article>
+      <article class="span8">
+        <h3><i class="icon-code"></i></h3>
+        <pre class="prettyprint linenums">
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+</pre>
+      </article>
+    </div>
+
+    <div class="row">
+      <article class="span4">
+        <h3>scale 缩放-2</h3>
+        <section class="scale2"><i class="icon-html5"></i></section>        
+      </article>
+      <article class="span8">
+        <h3><i class="icon-code"></i></h3>
+        <pre class="prettyprint linenums">
+  -webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+</pre>
+      </article>
+    </div>
+
+    <div class="row">
+      <article class="span4">
+        <h3>skew 变形</h3>
+        <section class="skew"><i class="icon-html5"></i></section>        
+      </article>
+      <article class="span8">
+        <h3><i class="icon-code"></i></h3>
+        <pre class="prettyprint linenums">
+  -webkit-transform: skew(-30deg, 0);
+  -moz-transform: skew(-30deg, 0);
+  -ms-transform: skewX(-30deg) skewY(0);
+  -o-transform: skew(-30deg, 0);
+  transform: skew(-30deg, 0);
+</pre>
+      </article>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        window.prettyPrint && prettyPrint();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+@import "components/bootstrap/less/bootstrap.less";
+
+h1{ text-align: center;}
+div.row{margin-bottom:40px;}
+article > section{
+	background: @blue;
+	cursor: pointer;
+	font-size:80px;
+	line-height: 200px;
+	text-align: center;
+	.square(200px);
+	.transition(all .5s linear);
+}
+.rotate2, .scale2{
+	-webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+.transform:active{
+	.translate(60px, 0);
+}
+.rotate:active{
+	.rotate(90deg);
+}
+.rotate2:active{
+	.rotate(90deg);
+}
+.scale:active{
+	.scale(0.5);
+}
+.scale2:active{
+	.scale(1.5);
+}
+.skew:active{
+	.skew(-30deg, 0)
+}

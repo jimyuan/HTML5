@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Workers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="ws.less" rel="stylesheet/less" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <script src="components/less.js/dist/less-1.4.1.js"></script>
+
+  </head>
+  <body class="container">    
+    <header class="row">
+      <h1 class="span12">Web Socket Demo</h1>
+    </header>
+    <hr>
+    <div class="row">
+      <section class="span12">
+        <button class="btn btn-success" id="turnOn">连接</button>
+        <button class="btn btn-danger disabled" id="turnOff">断开</button>
+        <hr>
+        <div id="msgWindow"></div>
+        <div class="clearfix"></div>
+        <div class="input-append">
+          <input class="span5" id="inputText" placeholder="input text here" type="text">
+          <button class="btn" type="button" id="sendInfo">Go!</button>
+        </div>
+        <pre class="prettyprint linenums">
+var ws = new WebSocket('ws://html5rocks.websocket.org/echo');
+ws.onopen=function(){
+  this.send("Hello WebSocket");
+}
+ws.onmessage=function(event){
+  //show event.date
+  console.log("message事件被触发");
+}
+ws.onclose=function(){
+  this.send("bye!");
+}
+</pre>
+      </section>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        window.prettyPrint && prettyPrint();
+        var t=$("#msgWindow");
+
+        $("#turnOn").on("click", function(){
+          t.append("connecting...<br>");
+          var ws = new WebSocket('ws://html5rocks.websocket.org/echo');
+
+          ws.onopen=function(evt){
+            $("#turnOn").addClass("disabled").next().removeClass("disabled");
+            t.append("connected!<br>");
+            var msg="Hello WebSocket";
+            this.send(msg);
+            t.append("me: "+msg+"<br>");
+          }
+
+          ws.onmessage = function(evt){
+            var data = evt.data;
+            t.append("server:"+data+"<br>");
+          }
+
+          ws.onclose=function(){
+            t.append("disconnected!<br>");
+            $("#turnOn").removeClass("disabled").next().addClass("disabled");
+          }
+
+          $("#sendInfo").on("click", function(){
+            var msg=$("#inputText").val();
+            t.append("me: "+msg+"<br>");
+            ws.send(msg);
+          })
+
+          $("#turnOff").on("click", function(){
+            if(!$(this).hasClass("disabled")){
+              var msg="bye!";
+              t.append("me: "+msg+"<br>");
+              ws.send(msg);
+              ws.close();
+            }
+          })
+        });
+
+      });
+    </script>
+  </body>
+</html>

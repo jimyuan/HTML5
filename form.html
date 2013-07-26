@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 FORM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="components/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <style type="text/css" media="screen">
+      code{ cursor: pointer;}
+      body>section, code{ margin: 20px 0; }
+      input:invaild{border-color:red;}
+      code, pre{border-radius: 0;}
+      code.expend{border-bottom-width: 0; color:gray;}
+    </style>
+  </head>
+  <body class="container">    
+    <header class="row">
+      <h1 class="span12">new form featrue</h1>    
+    </header>
+    
+    <!-- datalist demo -->
+    <section class="row">
+      <form class="span12">
+        <legend>new elements</legend>
+        <input list="HTML5" class="span5" type="text">
+        <span class="help-block">三个预设值：HTML5, CSS3, JS-API</span>
+        <datalist id="HTML5">
+          <option value="HTML"/>
+          <option value="CSS3"/>
+          <option value="JS-API"/>
+        </datalist>
+        <div class="alert alert-info">
+          <i class="icon-info-sign"></i> <strong>Another new form elements: </strong>keygen, output
+        </div>
+        <hr class="clearfix">
+        <code><i class="icon-eye-open"></i> view source</code>
+        <pre class="prettyprint linenums hide">
+&lt;input type="text" list="HTML5"&gt;
+&lt;datalist id="HTML5"&gt;
+  &lt;option value="HTML"&gt;
+  &lt;option value="CSS3"&gt;
+  &lt;option value="JS-API"&gt;
+&lt;/datalist&gt;
+</pre>
+      </form>
+    </section>
+
+    <section class="row">
+      <form class="span12">
+        <legend>new types</legend>
+        <input type="text" required class="span5">
+        <input type="email" value="master@hotmail.com" class="span5">
+        <input type="search" results="10" placeholder="Search..." class="span5">
+        <input type="email"  placeholder="type here" pattern="^\w(\w*\.*-*)*@([\w-]+\.)+\w{2,4}$" class="span5">
+        <input type="color" placeholder="e.g. #bbbbbb" class="span5">
+        <input type="number" step="1" min="-5" max="10" value="0" class="span5">
+        <input type="date" min="2012-09-01" max="20113-09-01" value="2013-08-01" class="span5">
+        <input type="range" min="0" max="50" value="10" class="span5">
+        <div class="alert alert-info">
+          <i class="icon-info-sign"></i> <strong>All types: </strong>email, url, number, range, Date pickers (date, month, week, time, datetime, datetime-local), search, color
+        </div>
+        <hr class="clearfix">
+        <code><i class="icon-eye-open"></i> view source</code>
+        <pre class="prettyprint linenums hide">
+&lt;input type="text" required class="span5"&gt;
+&lt;input type="email" value="master@hotmail.com" class="span5"&gt;
+&lt;input type="search" results="10" placeholder="Search..." class="span5"&gt;
+&lt;input type="email"  placeholder="type here" pattern="^\w(\w*\.*-*)*@([\w-]+\.)+\w{2,4}$" class="span5"&gt;
+&lt;input type="color" placeholder="e.g. #bbbbbb" class="span5"&gt;
+&lt;input type="number" step="1" min="-5" max="10" value="0" class="span5"&gt;
+&lt;input type="date" min="2012-09-01" max="20113-09-01" value="2013-08-01" class="span5"&gt;
+&lt;input type="range" min="0" max="50" value="10" class="span5"&gt;
+</pre>
+      </form>
+    </section>
+
+    <section class="row">
+      <form class="span12">
+        <legend>new attributes</legend>
+        <p><strong>new form attribuutes</strong></p>
+        <ul>
+          <li>autocomplete</li>
+          <li>novalidate</li>
+        </ul>
+        <p><strong>new input attributes</strong></p>
+        <ul>
+          <li>autocomplete</li>
+          <li>autofocus</li>
+          <li>form</li>
+          <li>form overrides (formaction, formenctype, formmethod, formnovalidate, formtarget)</li>
+          <li>height &amp; width</li>
+          <li>list</li>
+          <li>min, max &amp; step</li>
+          <li>multiple</li>
+          <li>pattern (regexp)</li>
+          <li>placeholder</li>
+          <li>required</li>
+        </ul>
+      </form>
+    </section>
+
+    <pre class="prettyprint linenums">
+&lt;audio controls="controls"&gt;
+  &lt;source src="song.ogg" type="audio/ogg"&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+    </pre>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        // $("body")[0].onselectstart=function(){return false;}
+        // $("body")[0].ondragstart=function(){return false;}
+        window.prettyPrint && prettyPrint();
+
+        $("i.icon-eye-open").parent().on("click",function(){
+          $(this).toggleClass("expend").next().slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notify</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="notify.less" rel="stylesheet/less" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <script src="components/less.js/dist/less-1.4.1.js"></script>
+
+  </head>
+  <body class="container">    
+    <header class="row">
+      <h1 class="span12">Notifications</h1>
+    </header>
+    <hr>
+    <div class="row">
+      <section class="span12">
+        <button class="btn" id="w3c">Show strandard notifications</button>
+        <button class="btn" id="webkit">Show webkitNotifications</button>
+        <p>&nbsp;</p>
+        <code><i class="icon-eye-open"></i> view source</code>
+        <pre class="prettyprint linenums hide">
+var notify = new Notification(
+  "W3C",
+  {
+    iconUrl : "",
+    tag : 'tag', 
+    body : "你看到的是W3C推荐的标准方式实现的Notifications！"
+  }
+);
+notify.onerror = function(){
+  console.log("error事件被触发:");
+};
+notify.onshow = function(){
+  console.log("show事件被触发:");
+};
+notify.ondisplay = function(){
+  console.log("display事件被触发:");
+};
+notify.onclick = function(){
+  console.log("click事件被触发:");
+  notify.close();
+};
+notify.onclose = function(){
+  console.log("close事件被触发:");
+};
+notify.show();
+</pre>
+        <code><i class="icon-eye-open"></i> view source</code>
+        <pre class="prettyprint linenums hide">
+var notify = webkitNotifications.createNotification(
+  "", //icon路径，暂时不支持
+  "webkit", //title
+  "你看到的是webkit方式实现的Notifications！" //content
+);
+</pre>
+      </section>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        window.prettyPrint && prettyPrint();
+       
+        var _showNotificationByWebkit = function(){
+          var _fun = function(){
+            var notify = webkitNotifications.createNotification(
+              "",
+              "webkit",
+              "你看到的是webkit方式实现的Notifications！"
+            );
+            notify.onerror = function(){
+              console.log("error事件被触发:");
+            };
+            notify.onshow = function(){
+              console.log("show事件被触发:");
+            };
+            notify.ondisplay = function(){
+              console.log("display事件被触发:");
+            };
+            notify.onclick = function(){
+              console.log("click事件被触发:");
+              notify.close();
+            };
+            notify.onclose = function(){
+              console.log("close事件被触发:");
+            };
+            notify.show();
+          };
+      
+          // 检查权限，0：已授权，1：已拒绝
+          if(webkitNotifications.checkPermission() > 0) {
+            // 请求授权
+            webkitNotifications.requestPermission(_fun);
+          }
+          else{
+            _fun();
+          }
+        };
+
+        var _showNotificationByW3C = function(){
+          //window.indexForNotify = window.indexForNotify ? ++window.indexForNotify : 1;
+          var notify = new Notification(
+            "W3C",
+            {
+              iconUrl : "",
+              tag : 'tag',
+              body : "你看到的是W3C推荐的标准方式实现的Notifications！"
+            }
+          );
+          notify.onerror = function(){
+            console.log("error事件被触发:");
+          };
+          notify.onshow = function(){
+            console.log("show事件被触发:");
+          };
+          notify.ondisplay = function(){
+            console.log("display事件被触发:");
+          };
+          notify.onclick = function(){
+            console.log("click事件被触发:");
+            notify.close();
+          };
+          notify.onclose = function(){
+            console.log("close事件被触发:");
+          };
+          notify.show();
+        };
+
+        $("#webkit").on("click", _showNotificationByWebkit);
+        $("#w3c").on("click", _showNotificationByW3C);
+
+        $("i.icon-eye-open").parent().on("click",function(){
+          $(this).toggleClass("expend").next().slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

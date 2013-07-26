@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <style type="text/css" media="screen">
+      h1{
+        text-align: center;
+      }
+
+      section, .codeview{
+        width:800px; height:500px;
+        margin:0 auto 20px;
+        background: #EEE;
+      }
+
+      .codeview{
+        height:auto;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body class="container">   
+    <h1>SVG DEMO</h1> 
+    <section>
+      <svg>
+        <circle cx="50%" cy="50%" r="200" fill="red"></circle>
+      </svg>
+    </section>
+    <div class="codeview">
+      <pre class="prettyprint linenums hide">
+&lt;section&gt;
+  &lt;svg&gt;
+    &lt;circle cx="50%" cy="50%" r="200" fill="red"&gt;&lt;/circle&gt;
+  &lt;/svg&gt;
+&lt;/section&gt;
+</pre>
+    </div>
+
+    <section>
+      <svg>
+        <rect x="250" y="200" width="300" height="100" fill="blue" stroke="orange" stroke-width="20" />
+      </svg>
+    </section>
+    <div class="codeview">
+      <pre class="prettyprint linenums hide">
+&lt;section&gt;
+  &lt;svg&gt;
+    &lt;rect x="250" y="200" 
+          width="300" height="100" 
+          fill="blue" stroke="orange" 
+          stroke-width="20"&gt;&lt;/rect&gt;
+  &lt;/svg&gt;
+&lt;/section&gt;
+</pre>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+        window.prettyPrint && prettyPrint();
+    </script>
+  </body>
+</html>

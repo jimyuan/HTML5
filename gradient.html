@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GRADIENT FORM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="gradient.less" rel="stylesheet/less" media="screen">
+    <link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" media="screen">
+    <script src="components/less.js/dist/less-1.4.1.js"></script>   
+  </head>
+  <body class="container">    
+    <header class="row">
+      <hgroup class="span12">
+        <h1>Gradient</h1>
+        <h3>基础色设定</h3>
+      </hgroup>
+      <div class="span4 s">
+        red
+      </div>
+      <div class="span4 m">
+        green
+      </div>
+      <div class="span4 e">
+        blue
+      </div>
+      <div class="span4 l">
+        light-gray
+      </div>
+      <div class="span4 g">
+        gray
+      </div>
+      <div class="span4 d">
+        dark-gray
+      </div>
+    </header>
+    <hr>
+    <div class="row">
+      <article>
+        <h3>横向渐变</h3>
+        <section class="span6 s1"></section>
+        <section class="span6 s8"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-gradient(linear, 0 0, 100% 0, from(red), to(blue)); // Safari 4+, Chrome 2+
+background-image: -webkit-linear-gradient(left, red, blue); // Safari 5.1+, Chrome 10+
+background-image: -moz-linear-gradient(left, red, blue); // FF 3.6+
+background-image: -o-linear-gradient(left, red, blue); // Opera 11.10
+background-image: linear-gradient(to right, red, blue); // Standard, IE10
+</pre>          
+        </div>
+        <div class="clearfix"></div>
+        <h3>纵向渐变</h3>
+        <section class="span6 s2"></section>
+        <section class="span6 s9"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(red), to(blue));
+background-image: -webkit-linear-gradient(top, red, blue);
+background-image: -moz-linear-gradient(top, red, blue);
+background-image: -o-linear-gradient(top, red, blue);
+background-image: linear-gradient(to bottom, red, blue);
+</pre>
+        </div>
+        <div class="clearfix"></div>
+        <h3>角度渐变</h3>
+        <section class="span6 s3"></section>
+        <section class="span6 s10"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-linear-gradient(45deg, red, blue);
+background-image: -moz-linear-gradient(45deg, red, blue);
+background-image: -o-linear-gradient(45deg, red, blue);
+background-image: linear-gradient(45deg, red, blue);            
+</pre>
+        </div>
+        <div class="clearfix"></div>
+        <h3>横向三色渐变</h3>
+        <section class="span6 s4"></section>
+        <section class="span6 s11"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(red), color-stop(50%, green), to(blue));
+background-image: -webkit-linear-gradient(left, red, green 50%, blue);
+background-image: -moz-linear-gradient(left, red, green 50%, blue);
+background-image: -o-linear-gradient(left, red, green 50%, blue);
+background-image: linear-gradient(to right, red, green 50%, blue);
+</pre>
+        </div>
+        <div class="clearfix"></div>
+        <h3>纵向三色渐变</h3>
+        <section class="span6 s5"></section>
+        <section class="span6 s12"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(red), color-stop(50%, green), to(blue));
+background-image: -webkit-linear-gradient(red, green 50%, blue);
+background-image: -moz-linear-gradient(top, red, green 50%, blue);
+background-image: -o-linear-gradient(red, green 50%, blue);
+background-image: linear-gradient(red, green 50%, blue);
+</pre>
+        </div>
+        <div class="clearfix"></div>
+        <h3>径向渐变</h3>
+        <section class="span6 s6"></section>
+        <section class="span6 s13"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(red), to(blue));
+background-image: -webkit-radial-gradient(circle, red, blue);
+background-image: -moz-radial-gradient(circle, red, blue);
+background-image: -o-radial-gradient(circle, red, blue);
+</pre>
+        </div>
+        <div class="clearfix"></div>
+        <h3>条纹效果</h3>
+        <section class="span6 s7"></section>
+        <section class="span6 s14"></section>
+        <div class="span12">
+          <code><i class="icon-eye-open"></i> view source</code>
+          <pre class="prettyprint linenums hide">
+background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+
+background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+
+background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+
+background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+
+background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+</pre>
+        </div>
+        <div class="clearfix"></div>
+
+      </article>
+    </div>
+
+    <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        window.prettyPrint && prettyPrint();
+
+        $("i.icon-eye-open").parent().on("click",function(){
+          $(this).toggleClass("expend").next().slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

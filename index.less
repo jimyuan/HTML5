@@ -1,0 +1,26 @@
+@import "components/bootstrap/less/bootstrap.less";
+
+h1{
+	text-align: center;
+}
+
+section.span3{
+	background: #EEE;
+	cursor:pointer;
+	text-align: center;
+	font-size: 20px;
+	margin-bottom:@gridGutterWidth;
+	height:@gridColumnWidth*2;
+	line-height: @gridColumnWidth*2;
+	.transition(all .3s ease-in-out);
+	&:hover{
+		background: lighten(blue, 30%);
+	}
+	a{
+		color: black;
+		&:hover{
+			text-decoration: none;
+			color:white;
+		}
+	}
+}
