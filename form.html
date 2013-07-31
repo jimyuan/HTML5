@@ -27,7 +27,7 @@
         <input list="HTML5" class="span5" type="text">
         <span class="help-block">三个预设值：HTML5, CSS3, JS-API</span>
         <datalist id="HTML5">
-          <option value="HTML"/>
+          <option value="HTML5"/>
           <option value="CSS3"/>
           <option value="JS-API"/>
         </datalist>
@@ -39,7 +39,7 @@
         <pre class="prettyprint linenums hide">
 &lt;input type="text" list="HTML5"&gt;
 &lt;datalist id="HTML5"&gt;
-  &lt;option value="HTML"&gt;
+  &lt;option value="HTML5"&gt;
   &lt;option value="CSS3"&gt;
   &lt;option value="JS-API"&gt;
 &lt;/datalist&gt;
@@ -56,7 +56,7 @@
         <input type="email"  placeholder="type here" pattern="^\w(\w*\.*-*)*@([\w-]+\.)+\w{2,4}$" class="span5">
         <input type="color" placeholder="e.g. #bbbbbb" class="span5">
         <input type="number" step="1" min="-5" max="10" value="0" class="span5">
-        <input type="date" min="2012-09-01" max="20113-09-01" value="2013-08-01" class="span5">
+        <input type="date" min="2012-09-01" max="2013-09-01" value="2013-08-01" class="span5">
         <input type="range" min="0" max="50" value="10" class="span5">
         <div class="alert alert-info">
           <i class="icon-info-sign"></i> <strong>All types: </strong>email, url, number, range, Date pickers (date, month, week, time, datetime, datetime-local), search, color
@@ -64,14 +64,14 @@
         <hr class="clearfix">
         <code><i class="icon-eye-open"></i> view source</code>
         <pre class="prettyprint linenums hide">
-&lt;input type="text" required class="span5"&gt;
-&lt;input type="email" value="master@hotmail.com" class="span5"&gt;
-&lt;input type="search" results="10" placeholder="Search..." class="span5"&gt;
-&lt;input type="email"  placeholder="type here" pattern="^\w(\w*\.*-*)*@([\w-]+\.)+\w{2,4}$" class="span5"&gt;
-&lt;input type="color" placeholder="e.g. #bbbbbb" class="span5"&gt;
-&lt;input type="number" step="1" min="-5" max="10" value="0" class="span5"&gt;
-&lt;input type="date" min="2012-09-01" max="20113-09-01" value="2013-08-01" class="span5"&gt;
-&lt;input type="range" min="0" max="50" value="10" class="span5"&gt;
+&lt;input type="text" required&gt;
+&lt;input type="email" value="master@hotmail.com"&gt;
+&lt;input type="search" results="10" placeholder="Search..."&gt;
+&lt;input type="email"  placeholder="type here" pattern="^\w(\w*\.*-*)*@([\w-]+\.)+\w{2,4}$"&gt;
+&lt;input type="color" placeholder="e.g. #bbbbbb"&gt;
+&lt;input type="number" step="1" min="-5" max="10" value="0"&gt;
+&lt;input type="date" min="2012-09-01" max="2013-09-01" value="2013-08-01"&gt;
+&lt;input type="range" min="0" max="50" value="10"&gt;
 </pre>
       </form>
     </section>
@@ -100,13 +100,6 @@
         </ul>
       </form>
     </section>
-
-    <pre class="prettyprint linenums">
-&lt;audio controls="controls"&gt;
-  &lt;source src="song.ogg" type="audio/ogg"&gt;
-  &lt;source src="song.mp3" type="audio/mpeg"&gt;
-&lt;/audio&gt;
-    </pre>
 
     <script src="components/bootstrap/docs/assets/js/jquery.js"></script>
     <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
